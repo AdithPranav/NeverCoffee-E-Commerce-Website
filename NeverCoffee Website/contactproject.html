@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - Never Coffee</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-section {
+            padding: 40px 0;
+        }
+
+        .contact-section h2 {
+            color: #4E3629;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-section p,
+        .contact-section ul,
+        .contact-section form {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .contact-section ul {
+            padding-left: 30px;
+        }
+
+        .contact-section li {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .contact-section {
+                padding: 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <h1>Contact Us - Never Coffee</h1>
+        </div>
+    </header>
+
+    <section id="contact-info" class="contact-section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>We would love to hear from you! Whether it's feedback, queries, or suggestions, feel free to reach out.</p>
+            <ul>
+                <li><strong>Address:</strong> 123 Coffee Street, Bean City, Tamil Nadu, India</li>
+                <li><strong>Phone:</strong> +91 98765 43210</li>
+                <li><strong>Opening Hours:</strong> Mon - Sat: 8 AM - 8 PM | Sun: 9 AM - 5 PM</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact-form" class="contact-section">
+        <div class="container">
+            <h2>Send Us a Feedback Message</h2>
+            <form id="contactForm">
+                <label for="name">Your Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="phone">Your Phone Number:</label><br>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="10-digit mobile number"><br><br>
+
+                <label for="message">Your Message:</label><br>
+                <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+                <button type="submit" class="order-btn">Submit</button>
+            </form>
+            <p id="success-message" style="color: green; display: none;">Message sent successfully!</p>
+        </div>
+    </section>
+
+    <section id="map" class="contact-section">
+        <div class="container">
+            <h2>Find Us Here</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.444511636445!2d80.2333!3d13.0833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ddc8d84f7b%3A0x4c75d0e1976a04e4!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1682949470836!5m2!1sen!2sin" 
+                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Never Coffee. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="contactproject.js"></script>
+</body>
+</html>

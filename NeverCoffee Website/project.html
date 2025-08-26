@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Never Coffee</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<header>
+    <div class="container header-container">
+      <img src="nevercoffeelogo.png" alt="Never Coffee Logo" class="logo" />
+        <h1>Never Coffee</h1>
+        <nav class="nav-links">
+            <a href="homeproject.html">Home</a>
+            <a href="aboutproject.html">About</a>
+            <a href="contactproject.html">Contact</a>
+            <div class="cart-icon" id="cart-icon">
+    🛒 Brewlist (<span id="cart-count">0</span>)
+</div>
+           <div class="cart-popup" id="cart-popup">
+    <h3>Your Brewlist</h3>
+    <ul id="cart-items"></ul>
+
+</div>
+        </nav>
+    </div>
+</header>
+
+
+<section class="coffees">
+  <div class="coffee-card">
+    <img src="coffee1.jpg" alt="Espresso">
+    <h3>Espresso</h3>
+    <p>₹200</p>
+    <p class="desc">Bold and concentrated shot of pure coffee energy.</p>
+    <button class="order-btn">Order</button>
+    <button class="cart-btn">Add to Brewlist</button>
+  </div>
+
+  <div class="coffee-card">
+    <img src="coffee2.jpg" alt="Americano">
+    <h3>Americano</h3>
+    <p>₹250</p>
+    <p class="desc">Espresso diluted with hot water for a smooth flavor.</p>
+    <button class="order-btn">Order</button>
+    <button class="cart-btn">Add to Brewlist</button>
+  </div>
+
+  <div class="coffee-card">
+    <img src="coffee3.jpg" alt="Latte">
+    <h3>Latte</h3>
+    <p>₹300</p>
+    <p class="desc">Creamy and mild, with a smooth layer of milk foam.</p>
+    <button class="order-btn">Order</button>
+    <button class="cart-btn">Add to Brewlist</button>
+  </div>
+
+  <div class="coffee-card">
+    <img src="coffee4.jpg" alt="Cappuccino">
+    <h3>Cappuccino</h3>
+    <p>₹350</p>
+    <p class="desc">A frothy delight with equal parts espresso, milk, and foam.</p>
+    <button class="order-btn">Order</button>
+    <button class="cart-btn">Add to Brewlist</button>
+  </div>
+
+  <div class="coffee-card">
+    <img src="coffee5.jpg" alt="Macchiato">
+    <h3>Macchiato</h3>
+    <p>₹280</p>
+    <p class="desc">Espresso marked with a small amount of steamed milk.</p>
+    <button class="order-btn">Order</button>
+    <button class="cart-btn">Add to Brewlist</button>
+  </div>
+
+  <div class="coffee-card">
+    <img src="coffee6.jpg" alt="Mocha">
+    <h3>Mocha</h3>
+    <p>₹330</p>
+    <p class="desc">Chocolate-infused coffee with milk and whipped cream.</p>
+    <button class="order-btn">Order</button>
+    <button class="cart-btn">Add to Brewlist</button>
+  </div>
+
+  <div class="coffee-card">
+    <img src="coffee7.jpg" alt="Flat White">
+    <h3>Flat White</h3>
+    <p>₹310</p>
+    <p class="desc">Smooth blend of espresso and microfoam for coffee purists.</p>
+    <button class="order-btn">Order</button>
+    <button class="cart-btn">Add to Brewlist</button>
+  </div>
+
+  <div class="coffee-card">
+    <img src="coffee8.jpg" alt="Affogato">
+    <h3>Affogato</h3>
+    <p>₹360</p>
+    <p class="desc">Espresso poured over a scoop of creamy vanilla ice cream.</p>
+    <button class="order-btn">Order</button>
+    <button class="cart-btn">Add to Brewlist</button>
+  </div>
+
+  <div class="coffee-card">
+    <img src="coffee9.jpg" alt="Iced Coffee">
+    <h3>Iced Coffee</h3>
+    <p>₹270</p>
+    <p class="desc">Chilled brewed coffee served over ice. Refreshing & bold.</p>
+    <button class="order-btn">Order</button>
+    <button class="cart-btn">Add to Brewlist</button>
+  </div>
+
+  <div class="coffee-card">
+    <img src="coffee10.jpg" alt="Turmeric Latte">
+    <h3>Turmeric Latte</h3>
+    <p>₹320</p>
+    <p class="desc">Golden milk latte with turmeric, cinnamon, and warm spices.</p>
+    <button class="order-btn">Order</button>
+    <button class="cart-btn">Add to Brewlist</button>
+  </div>
+
+  <div class="coffee-card">
+    <img src="coffee11.jpg" alt="Cold Brew">
+    <h3>Cold Brew</h3>
+    <p>₹350</p>
+    <p class="desc">Slow-steeped cold coffee that’s smooth and mellow.</p>
+    <button class="order-btn">Order</button>
+    <button class="cart-btn">Add To Brewlist</button>
+  </div>
+
+  <div class="coffee-card">
+    <img src="coffee12.jpg" alt="Irish Coffee">
+    <h3>Irish Coffee</h3>
+    <p>₹450</p>
+    <p class="desc">Hot coffee with Irish whiskey, sugar, and whipped cream.</p>
+    <button class="order-btn">Order</button>
+    <button class="cart-btn">Add To Brewlist</button>
+  </div>
+
+  <div class="coffee-card">
+    <img src="coffee13.jpg" alt="Frappe">
+    <h3>Frappe</h3>
+    <p>₹320</p>
+    <p class="desc">Iced blended coffee with foam and optional flavors.</p>
+    <button class="order-btn">Order</button>
+    <button class="cart-btn">Add To Brewlist</button>
+  </div>
+
+  <div class="coffee-card">
+    <img src="coffee14.jpg" alt="Doppio">
+    <h3>Doppio</h3>
+    <p>₹220</p>
+    <p class="desc">A strong double shot of espresso for true caffeine lovers.</p>
+    <button class="order-btn">Order</button>
+    <button class="cart-btn">Add To Brewlist</button>
+  </div>
+
+  <div class="coffee-card">
+    <img src="coffee15.jpg" alt="Robusta">
+    <h3>Robusta</h3>
+    <p>₹200</p>
+    <p class="desc">Robust flavor and higher caffeine from premium Robusta beans.</p>
+    <button class="order-btn">Order</button>
+    <button class="cart-btn">Add To Brewlist</button>
+  </div>
+
+  <div class="coffee-card">
+    <img src="coffee16.jpg" alt="Dalgona Coffee">
+    <h3>Dalgona Coffee</h3>
+    <p>₹240</p>
+    <p class="desc">Whipped coffee on chilled milk, trendy and tasty.</p>
+    <button class="order-btn">Order</button>
+    <button class="cart-btn">Add To Brewlist</button>
+  </div>
+
+  <div class="coffee-card">
+    <img src="coffee17.jpg" alt="Vienna Coffee">
+    <h3>Vienna Coffee</h3>
+    <p>₹280</p>
+    <p class="desc">Black coffee topped with thick whipped cream.</p>
+    <button class="order-btn">Order</button>
+    <button class="cart-btn">Add To Brewlist</button>
+  </div>
+
+  <div class="coffee-card">
+    <img src="coffee18.jpg" alt="Cuban Coffee">
+    <h3>Cuban Coffee</h3>
+    <p>₹260</p>
+    <p class="desc">Strong espresso with a touch of sugar, Cuban style.</p>
+    <button class="order-btn">Order</button>
+    <button class="cart-btn">Add To Brewlist</button>
+  </div>
+
+  <div class="coffee-card">
+    <img src="coffee19.jpg" alt="Cortado">
+    <h3>Cortado</h3>
+    <p>₹230</p>
+    <p class="desc">Balanced coffee with equal parts espresso and steamed milk.</p>
+    <button class="order-btn">Order</button>
+    <button class="cart-btn">Add To Brewlist</button>
+  </div>
+
+  <div class="coffee-card">
+    <img src="coffee20.jpg" alt="Black Coffee">
+    <h3>Black Coffee</h3>
+    <p>₹100</p>
+    <p class="desc">Plain, pure, strong brew for coffee minimalists.</p>
+    <button class="order-btn">Order</button>
+    <button class="cart-btn">Add To Brewlist</button>
+  </div>
+</section>
+
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Never Coffee. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="project.js"></script>
+
+<div id="add-popup" class="popup"> Item added to Brewlist!</div>
+<div id="toast-message" class="toast"> Item added to Brewlist!</div>
+
+</body>
+</html>

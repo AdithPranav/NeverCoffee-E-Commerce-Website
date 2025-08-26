@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Biodata</title>
+</head>
+<body>
+
+  <h1>My Biodata</h1>
+
+  <h2>Personal Details</h2>
+  <label>Upload Photo:<br>
+    <input type="file" name="photo" accept="image/*">
+  </label><br><br>
+
+  <label>Full Name:<br>
+    <input type="text" name="name" placeholder="Enter your name" required>
+  </label><br><br>
+
+  <label>Date of Birth:<br>
+    <input type="date" name="dob" required>
+  </label><br><br>
+
+  <label>Gender:<br>
+    <select name="gender" required>
+      <option value="">Select</option>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
+    </select>
+  </label><br><br>
+
+  <label>Phone Number:<br>
+    <input type="tel" name="phone" placeholder="+91..." required>
+  </label><br><br>
+
+  <label>Email Address:<br>
+    <input type="email" name="email" placeholder="you@example.com" required>
+  </label><br><br>
+
+  <label>Address:<br>
+    <textarea name="address" rows="2" placeholder="Street, City, PIN" required></textarea>
+  </label><br><br>
+
+  <h2>Education</h2>
+  <label>Educational Qualification:<br>
+    <textarea name="education" rows="3" placeholder="e.g. B.Tech in CS, 2022" required></textarea>
+  </label><br><br>
+
+  <h2>Experience & Skills</h2>
+  <label>Work Experience:<br>
+    <textarea name="experience" rows="3" placeholder="e.g. Intern at XYZ (2023)" required></textarea>
+  </label><br><br>
+
+  <label>Skills:<br>
+    <textarea name="skills" rows="2" placeholder="e.g. Java, HTML/CSS" required></textarea>
+  </label><br><br>
+
+  <h2>Languages & Hobbies</h2>
+  <label>Languages Known:<br>
+    <input type="text" name="languages" placeholder="e.g. English, Tamil" required>
+  </label><br><br>
+
+  <label>Hobbies:<br>
+    <textarea name="hobbies" rows="2" placeholder="e.g. Reading, Music" required></textarea>
+  </label><br><br>
+
+  <h2>Declaration</h2>
+  <label>
+    <input type="checkbox" name="declaration" required>
+    I hereby declare that the information provided is true to the best of my knowledge.
+  </label><br><br>
+
+  <button type="submit">Submit</button>
+
+</body>
+</html>

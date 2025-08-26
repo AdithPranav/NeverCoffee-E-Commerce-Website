@@ -1,0 +1,282 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #F7F1E1;
+  color: #4E3629;
+}
+
+.logo {
+  width: 100px; /* or 80px, adjust as needed */
+  height: 100px;
+  margin-right: 50px;
+  vertical-align: middle;
+}
+
+
+header {
+  background-color: #4E3629;
+  color: white;
+  padding: 20px 0;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Georgia', serif;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Georgia', serif;
+  font-size: 3rem;
+}
+
+.brand-logo img {
+  height: 40px;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fffaf3;
+  color: #4E3629;
+  padding: 20px 35px;
+  border-radius: 10px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: none;
+  text-align: center;
+  animation: fadeInOut 2.5s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; display: none; }
+}
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fffaf3;
+  color: #4E3629;
+  padding: 12px 24px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Coffee Cards Section */
+.coffees {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 40px 0;
+}
+
+.coffee-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+}
+
+.coffee-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 8px 8px 0 0;
+}
+
+.coffee-card h3 {
+  margin: 15px 0;
+  color: #4E3629;
+  font-size: 1.5rem;
+}
+
+.coffee-card p {
+  color: #B68C4D;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.order-btn {
+  background-color: #B68C4D;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.order-btn:hover {
+  background-color: #4E3629;
+}
+
+.cart-btn {
+  background-color: #B68C4D;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.cart-btn:hover {
+  background-color: #4E3629;
+}
+
+/* Navigation Styling */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color:#B68C4D;
+  font-weight: bold;
+  padding: 8px 12px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+/* Optional: Layout for header */
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #B68C4D; /* beige color on hover */
+}
+
+.cart-icon {
+  font-size: 1.1rem;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-icon:hover {
+  background-color: #4E3629;
+  color: #B68C4D;
+}
+.cart-popup {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 60px;
+  background-color: #fff;
+  border: 2px solid #B68C4D;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 15px;
+  z-index: 999;
+  color: #4E3629;
+}
+
+.cart-popup h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.cart-popup ul {
+  list-style: none;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.cart-popup ul li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+ul {
+    list-style: none;   /* removes bullets (●) from all <ul> lists */
+    padding: 0;         /* removes default left indentation */
+    margin: 0;          /* optional: removes default top/bottom space */
+}
+
+
+footer {
+  background-color: #4E3629;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

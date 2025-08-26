@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Brewlist - Never Coffee</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #F7F1E1;
+      color: #4E3629;
+    }
+
+    header {
+      background-color: #4E3629;
+      color: white;
+      padding: 20px 0;
+    }
+
+    header h1 {
+      text-align: center;
+      font-size: 3rem;
+    }
+
+    .container {
+      width: 90%;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    .cart-section {
+      padding: 40px 0;
+    }
+
+    .cart-section h2 {
+      color: #4E3629;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .cart-item img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      margin-right: 20px;
+      border-radius: 8px;
+    }
+
+    .cart-item-details {
+      flex: 1;
+    }
+
+    .cart-item-buttons button {
+      background-color: #B68C4D;
+      color: white;
+      padding: 6px 14px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .cart-item-buttons button:hover {
+      background-color: #4E3629;
+    }
+
+    @media (max-width: 768px) {
+      .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cart-item img {
+        margin-bottom: 10px;
+      }
+
+      .cart-item-buttons {
+        margin-top: 10px;
+      }
+    }
+
+    .order-btn {
+      background-color: #B68C4D;
+      color: white;
+      font-size: 1rem;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .order-btn:hover {
+      background-color: #4E3629;
+    }
+
+    .total-order-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+      padding: 0 10px;
+    }
+
+    .total-price {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #4E3629;
+    }
+
+    footer {
+      background-color: #4E3629;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    /* Popup */
+    #order-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.95);
+      background-color: #fffaf3;
+      color: #4E3629;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      z-index: 9999;
+      font-size: 1.1rem;
+      font-weight: 500;
+      text-align: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.4s ease-in-out;
+    }
+
+    #order-popup.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    #main-content.blur {
+  filter: blur(4px);
+  transition: filter 0.3s ease-in-out;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Popup -->
+  <div id="order-popup">☕ Thank you for your order!<br>Your cup is on the way!</div>
+
+  <!-- Main content wrapper -->
+  <div id="main-content">
+    <header>
+      <div class="container header-container">
+        <h1>Your Brewlist - Never Coffee</h1>
+      </div>
+    </header>
+
+    <section class="cart-section">
+      <div class="container">
+        <h2>Items in Your Brewlist:</h2>
+        <div id="cart-items"></div>
+        <div id="cart-total" style="margin-top: 20px; font-size: 1.3rem; font-weight: bold; color: #4E3629;"></div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Never Coffee. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+
+  <script>
+    const cartContainer = document.getElementById('cart-items');
+    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    function renderCart() {
+      cartContainer.innerHTML = '';
+
+      if (cartItems.length === 0) {
+        cartContainer.innerHTML = '<p>Your brewlist is empty.</p>';
+        return;
+      }
+
+      let total = 0;
+
+      cartItems.forEach((item, index) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('cart-item');
+
+        const numericPrice = parseFloat(item.price.replace(/[^\d]/g, ''));
+        total += numericPrice;
+
+        itemDiv.innerHTML = `
+          <img src="${item.image}" alt="${item.name}">
+          <div class="cart-item-details">
+            <h3>${item.name}</h3>
+            <p>Price: ${item.price}</p>
+          </div>
+          <div class="cart-item-buttons">
+            <button onclick="removeItem(${index})">Delete</button>
+          </div>
+        `;
+
+        cartContainer.appendChild(itemDiv);
+      });
+
+      const totalDiv = document.createElement('div');
+      totalDiv.classList.add('total-order-row');
+      totalDiv.innerHTML = `
+        <div class="total-price"><strong>Total: ₹${total}</strong></div>
+        <button id="place-order-btn" class="order-btn">Get My Cup</button>
+      `;
+
+      cartContainer.appendChild(totalDiv);
+
+      // Button logic after it's in DOM
+      setTimeout(() => {
+        const orderBtn = document.getElementById('place-order-btn');
+        if (orderBtn) {
+          orderBtn.addEventListener('click', () => {
+            const popup = document.getElementById('order-popup');
+            popup.classList.add('show');
+document.getElementById('main-content').classList.add('blur');
+
+setTimeout(() => {
+  popup.classList.remove('show');
+  document.getElementById('main-content').classList.remove('blur');
+}, 1500);
+
+
+            cartItems = [];
+            localStorage.removeItem('cartItems');
+            renderCart();
+            if (typeof updateCartCount === 'function') updateCartCount();
+          });
+        }
+      }, 0);
+    }
+
+    function removeItem(index) {
+      cartItems.splice(index, 1);
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      renderCart();
+      if (typeof updateCartCount === 'function') updateCartCount();
+    }
+
+    renderCart();
+
+    function updateCartCount() {
+  // Update count in localStorage in case any other page reads it
+  const cartCountSpan = document.getElementById('cart-count');
+  const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  if (cartCountSpan) {
+    cartCountSpan.textContent = cartItems.length;
+  }
+}
+
+
+
+  </script>
+</body>
+</html>
